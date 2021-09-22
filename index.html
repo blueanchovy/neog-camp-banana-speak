@@ -7,30 +7,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banana Speak</title>
     <style>
-        textarea {
-            width: 80%;
-            height: 10vh;
-            display: block;
-            margin: 1rem;
+        @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+        :root{
+            --primary-color: #FFFF00;
+            --width-break:600px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0px;
+            font-family: 'Kalam', cursive;
+        }
+
+        nav{
+            text-align: center;
+            background-color: var(--primary-color);
+        }
+        main{
+            margin: auto;
             padding: 1rem;
+            max-width: var(--width-break);
+        }
+        textarea {
+            box-sizing:border-box;
+            width: 100%;
+            min-height: 20vh;
+            display: block;
+            margin-top: 2rem;
+            font-size: large;
+            font-family: inherit;
+        }
+
+        button{
+            margin: 1rem 0rem;
+            padding: 1rem 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: large;
+            background-color: var(--primary-color);
+            border: none;
         }
 
         #output{
+            box-sizing: border-box;
             border: 1px solid black;
-            width: 80%;
-            height: 10vh;
-            margin: 1rem;
+            width: 100%;
+            min-height: 10vh;
+            max-height: 20vh;
+            overflow: scroll;
+        }
+        
+        footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             padding: 1rem;
+            background-color: var(--primary-color);
+            text-align: center;
+        }
+        
+        footer p {
+            max-width: var(--width-break);
+            margin: auto;
         }
     </style>
 </head>
 
 <body>
-    <h1>Talk Banana...</h1>
-    <textarea id="txt-input" placeholder="Enter the text you want to convert to banana language."></textarea>
-    <button id="btn-translate">Translate</button>
-    <div style="font-size: larger;">Output goes down here 👇</div>
-    <div id="output"></div>
+    <nav>
+        <div style="font-size:2rem; padding: 1rem;">
+            Talk Banana...
+        </div>
+    </nav>
+    
+    <main>
+        
+    <textarea style="font-style: inherit;"id="txt-input" placeholder="Enter the text you want to convert to banana language."></textarea>
+    <button id="btn-translate">Translate to Banana!</button>
+    <div>Output goes down here 👇</div>
+    <div id="output" style="padding:1rem; font-size:large;"></div>
+
+    </main>
+
+    <footer>
+        <div style="font-size: x-large;">about</div>
+        <p>Are you a fan of minions? Did you know that the gibberish they say is an actual language. Use the translator to convert your text from English to Minion speak or Banana language.</p>
+    </footer>
 
     <script src="/app.js" type="text/javascript"></script>
 </body>
